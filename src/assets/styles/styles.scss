@@ -1,6 +1,6 @@
-@use 'variables';
-@use 'reset';
-@use 'base';
-@use 'classes';
-@use 'media-queries' as *;
-@use 'utils';
+@use  "base" as *;
+@use  "variables" as *;
+@use  "reset" as *;
+@use  "classes" as *;
+@use  "utils" as *;
+@use  "media-queries" as *;
