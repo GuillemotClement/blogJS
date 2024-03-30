@@ -1,0 +1,36 @@
+.title{
+    &-underline{
+        padding-bottom: 2rem;
+        border-bottom: 1px solid var(--divider);
+    }
+}
+
+.btn{
+    border: 0;
+    padding: 1rem 2rem;
+    box-shadow: var(--box-shadow);
+    border-radius: 5px;
+    font-weight: 700;
+    cursor: pointer;
+    color: white;
+    text-transform: uppercase;
+    transition: background-color 0.2s;
+    &-primary{
+        background-color: var(--primary);
+        &:hover{
+            background-color: var(--dark);
+            transition: background-color 0.2s;
+        }
+    }
+    &-secondary{
+        border: 1px solid var(--primary);
+        color: var(--primary);
+        background-color: white;
+
+        &:hover{
+            border: 1px solid var(--dark);
+            color: var(--dark);
+            transition: background-color 0.2s;
+        }
+    }
+}
