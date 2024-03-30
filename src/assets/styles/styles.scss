@@ -17,8 +17,34 @@
 
 header{
     grid-area: header;
-    background: green;
+    background: var(--dark);
     padding: 20px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    a{
+        color: white;
+    }
+    .header-brand{
+        font-size: 4rem;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    ul{
+        display: flex;
+        li{
+            .header-nav{
+                font-size: 1.8rem;
+                padding: 0 10px;
+            }
+            .active{
+                font-weight: bold;
+                text-decoration: underline;
+            }
+        } 
+    }
+    
 }
 
 .content{
