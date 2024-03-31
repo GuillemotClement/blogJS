@@ -33,6 +33,16 @@
             transition: background-color 0.2s;
         }
     }
+    &-danger{
+        border: 1px solid var(--danger);
+        background: white;
+        color: var(--danger);
+        &:hover{
+            border: 1px solid var(--danger-dark);
+            color: var(--danger-dark);
+            transition: background-color 0.2s;
+        }
+    }
 }
 
 .text{
