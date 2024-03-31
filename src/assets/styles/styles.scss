@@ -31,20 +31,55 @@ header{
         font-weight: bold;
         text-transform: uppercase;
     }
-    ul{
-        display: flex;
-        li{
-            .header-nav{
-                font-size: 1.8rem;
-                padding: 0 10px;
+    .header-menu{
+        position: relative;
+        ul{
+            @include xs {
+                display: none;
             }
-            .active{
-                font-weight: bold;
-                text-decoration: underline;
-            }
-        } 
+            display: flex;
+            li{
+                .header-nav{
+                    font-size: 1.8rem;
+                    padding: 0 10px;
+                }
+                .active{
+                    font-weight: bold;
+                    text-decoration: underline;
+                }
+            } 
+        }
     }
-    
+    .header-menu-icon{
+        display: none;
+        font-size: 3rem;
+        color: white;
+        @include xs{
+            display: block;
+        }
+    }
+    .mobile-menu{
+        display: none;
+        position: absolute;
+        box-shadow: var(--box-shadow);
+        top: 9.5rem;
+        right: 1rem;
+        padding: 3rem 1.5rem;
+        background-color: white;
+        width: 20rem;
+        ul{
+            display: block;
+            li{
+                margin: 2rem 0;
+                a{
+                    color: var(--text);
+                }
+            }
+        }
+    }
+    .mobile-menu.open{
+        display: block;
+    }
 }
 
 .content{
@@ -69,3 +104,4 @@ footer{
         }
     }
 }
+
