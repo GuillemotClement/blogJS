@@ -21,14 +21,36 @@ const createArticles = (articles) => {
     });
     articleContainerElement.innerHTML = '';
     articleContainerElement.append(...articlesDOM);
+    const deleteButtons =  articleContainerElement.querySelectorAll(".btn-danger");
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', async event => {
+            try{
+                const target = event.target;
+                const articleId = target.dataset.id;
+                const response = await fetch(
+                    `https://restapi.fr/api/articles/${ articleId }`,
+                    {
+                    method: "DELETE",
+                    }
+                );
+                const body = await response.json();
+                console.log(body);
+                fetchArticle();
+            }catch(e){
+                console.log('erreur : ', e);
+            }
+        })
+    })
 };
 
 //on définit la fonction pour récupérer les données du back end
 const fetchArticle = async () => {
     try{
         const response = await fetch("https:restapi.fr/api/articles");
-        const articles = await response.json();
-        console.log(articles);
+        let articles = await response.json();
+        if(!Array.isArray(articles)){
+            articles = [articles];
+        }
         createArticles(articles);
     } catch(e){
         console.log('erreur : ', e);
