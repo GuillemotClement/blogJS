@@ -1,6 +1,7 @@
 //importation du fichier style
 import '../assets/styles/styles.scss';
 import './form.scss';
+import '../assets/js/topbar.js'
 
 const form = document.querySelector('form');
 const errorElement = document.querySelector('#errors');
